@@ -11,7 +11,7 @@ public class Expriment1D {
     float b = sc.nextFloat();
 
     // Menu
-	System.out.println("\t===Calculator===");
+    System.out.println("\t===Calculator===");
     System.out.println("1. Add");
     System.out.println("2. Subtract");
     System.out.println("3. Multiply");
@@ -35,7 +35,7 @@ public class Expriment1D {
         System.out.println("The quotient is " + (a / b));
         break;
       case 5:
-        System.out.println("The result is " + (Math.pow(a,b)));
+        System.out.println("The result is " + (Math.pow(a, b)));
         break;
       case 6:
         System.out.println("The remainder is " + (a % b));

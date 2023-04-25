@@ -17,8 +17,12 @@ public class Expriment2B {
       arr[i][4] -= arr[i][0];
     }
 
-    System.out.println("	Roll No |   Subject1    |   Subject2    |   Subject3    |	Total	|");
-    System.out.println("	----------------------------------------------------------------------");
+    System.out.println(
+      "	Roll No |   Subject1    |   Subject2    |   Subject3    |	Total	|"
+    );
+    System.out.println(
+      "	----------------------------------------------------------------------"
+    );
 
     int max = 0;
     int maxRoll = 0;
@@ -28,9 +32,23 @@ public class Expriment2B {
         max = total;
         maxRoll = arr[i][0];
       }
-      System.out.println("\t|"+ arr[i][0] + "\t|\t" +arr[i][1] + "\t|\t"+arr[i][2] + "\t|\t"+arr[i][3] + "\t|\t" + total + "\t|\t");
+      System.out.println(
+        "\t|" +
+        arr[i][0] +
+        "\t|\t" +
+        arr[i][1] +
+        "\t|\t" +
+        arr[i][2] +
+        "\t|\t" +
+        arr[i][3] +
+        "\t|\t" +
+        total +
+        "\t|\t"
+      );
     }
 
-    System.out.println("RollNo: " + maxRoll + " scored the maximum. i.e. " + max);
+    System.out.println(
+      "RollNo: " + maxRoll + " scored the maximum. i.e. " + max
+    );
   }
 }
