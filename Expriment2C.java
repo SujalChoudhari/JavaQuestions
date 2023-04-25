@@ -6,7 +6,7 @@ public class Expriment2C {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter the size to print the pattern:");
     int size = sc.nextInt();
-
+    size++;
     int arr[][] = new int[size][];
 
     for (int i = 1; i < size; i++) {
