@@ -1,3 +1,4 @@
+package Expriment2;
 import java.util.Scanner;
 
 public class Expriment2B {

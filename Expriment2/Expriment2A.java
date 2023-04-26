@@ -1,3 +1,4 @@
+package Expriment2;
 import java.util.Scanner;
 
 public class Expriment2A {
@@ -24,7 +25,7 @@ public class Expriment2A {
     }
 
     for (int i = 0; i < size; i++) {
-      System.out.println(res[i]);
+      System.out.print(res[i]);
     }
   }
 }
