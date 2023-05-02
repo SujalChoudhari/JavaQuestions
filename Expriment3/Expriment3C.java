@@ -7,16 +7,10 @@ public class Expriment3C {
     System.out.print("Enter a String:\n>>> ");
     String s = sc.nextLine();
 
+    String rev = new StringBuffer(s).reverse().toString();
 
-    String rev = "";
-    for(int i=s.length()-1;i>=0;i--){
-        rev += s.charAt(i);
-    }
-
-    if(s.compareTo(rev) == 0)
-        System.out.println("Palindrome");
-    else 
-    System.out.println("Not Palindrome");
-
+    if (s.compareTo(rev) == 0) System.out.println(
+      "Palindrome"
+    ); else System.out.println("Not Palindrome");
   }
 }

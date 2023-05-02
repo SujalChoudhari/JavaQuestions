@@ -4,7 +4,7 @@ import java.util.*;
 public class Expriment1B1 {
 
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    final Scanner sc = new Scanner(System.in);
     System.out.print("Enter 3 number: ");
     int a = sc.nextInt();
     int b = sc.nextInt();

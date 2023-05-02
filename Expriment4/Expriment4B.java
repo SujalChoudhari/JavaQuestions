@@ -3,7 +3,7 @@ import java.util.Vector;
 
 public class Expriment4B {
 
-  public static void main(String[] args) {
+  public static void main(String[ ] args) {
     Scanner sc = new Scanner(System.in);
     Vector<String> str = new Vector<>(5);
 
@@ -17,13 +17,17 @@ public class Expriment4B {
 
       str.add(newName);
     }
-    System.out.println("Enter string to find and remove");
+    System.out.println("Enter string to add or remove");
     String newStr = sc.nextLine();
 
     for(int i=0;i<str.size();i++){
         if(newStr.equals(str.get(i))){
             str.remove(i);
         }
+	else {
+		str.add(i);
+		break;
+	}
     }
 
     System.out.println("All the remaining names:");
