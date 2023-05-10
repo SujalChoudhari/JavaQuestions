@@ -19,16 +19,17 @@ public class Expriment4B {
     }
     System.out.println("Enter string to add or remove");
     String newStr = sc.nextLine();
-
+	
+	 boolean found = false;
     for(int i=0;i<str.size();i++){
         if(newStr.equals(str.get(i))){
             str.remove(i);
+			  found = true;
         }
-	else {
-		str.add(i);
-		break;
-	}
+
     }
+	if(!found)
+		str.add(newStr);
 
     System.out.println("All the remaining names:");
     for (String name : str) {

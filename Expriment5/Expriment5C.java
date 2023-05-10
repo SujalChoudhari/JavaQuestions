@@ -16,13 +16,6 @@ class Complex {
     return new Complex(first.x - second.x, first.y - second.y);
   }
 
-  public static Complex mul(Complex first, Complex second) {
-    return new Complex(first.x * second.x, first.y * second.y);
-  }
-
-  public static Complex div(Complex first, Complex second){
-    return new Complex(first.x / second.x,first.y / second.y);
-}
 }
 
 public class Expriment5C {
@@ -33,13 +26,11 @@ public class Expriment5C {
 
     Complex c3 = Complex.add(c1, c2);
     Complex c4 = Complex.sub(c1, c2);
-    Complex c5 = Complex.mul(c1, c2);
-    Complex c6 = Complex.div(c1, c2);
+
 
     System.out.println("Add result {X: " + c3.x + ", Y:" + c3.y + "}" );
     System.out.println("Sub result {X: " + c4.x + ", Y:" + c4.y + "}" );
-    System.out.println("Mul result {X: " + c5.x + ", Y:" + c5.y + "}" );
-    System.out.println("Div result {X: " + c6.x + ", Y:" + c6.y + "}" );
+
 
   }
 }

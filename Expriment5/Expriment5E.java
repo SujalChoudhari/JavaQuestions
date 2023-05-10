@@ -7,7 +7,6 @@ class Student {
   public int mathMarks;
   public int physicsMarks;
   public int chemistryMarks;
-
   public int total;
 
   Student(int id, String name, int math, int physics, int chem) {
