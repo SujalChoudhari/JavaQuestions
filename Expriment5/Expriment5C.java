@@ -8,12 +8,16 @@ class Complex {
     this.y = y;
   }
 
-  public static Complex add(Complex first, Complex second) {
+  public Complex add(Complex first, Complex second) {
     return new Complex(first.x + second.x, first.y + second.y);
   }
 
-  public static Complex sub(Complex first, Complex second) {
+  public Complex sub(Complex first, Complex second) {
     return new Complex(first.x - second.x, first.y - second.y);
+  }
+
+  public String toString(){
+    return "{ "+ this.x + "+ "+this.y+"i }";
   }
 
 }
@@ -21,15 +25,16 @@ class Complex {
 public class Expriment5C {
 
   public static void main(String[] args) {
+    Complex complexinator = new Complex(0, 0);
     Complex c1 = new Complex(3,0.3);
-    Complex c2 = new Complex(-2,5.6);
+    Complex c2 = new Complex(2,5.6);
 
-    Complex c3 = Complex.add(c1, c2);
-    Complex c4 = Complex.sub(c1, c2);
+    Complex c3 = complexinator.add(c1, c2);
+    Complex c4 = complexinator.sub(c1, c2);
 
 
-    System.out.println("Add result {X: " + c3.x + ", Y:" + c3.y + "}" );
-    System.out.println("Sub result {X: " + c4.x + ", Y:" + c4.y + "}" );
+    System.out.println("Add result " + c3 );
+    System.out.println("Sub result " + c4 );
 
 
   }
