@@ -24,6 +24,7 @@ class Complex {
 
 public class Expriment5C {
 
+
   public static void main(String[] args) {
     Complex complexinator = new Complex(0, 0);
     Complex c1 = new Complex(3,0.3);
@@ -31,7 +32,7 @@ public class Expriment5C {
 
     Complex c3 = complexinator.add(c1, c2);
     Complex c4 = complexinator.sub(c1, c2);
-
+    System.out.println(c1.x);
 
     System.out.println("Add result " + c3 );
     System.out.println("Sub result " + c4 );

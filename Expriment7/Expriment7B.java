@@ -1,6 +1,4 @@
-import java.lang.invoke.StringConcatFactory;
-
-import javax.sound.midi.Track;
+import java.util.*;
 
 class Staff {
     public int code;
@@ -20,10 +18,13 @@ class Teacher extends Staff {
         super(code, name);
     }
     
-    public void read(String sub, int exp){
-        
-        this.sub = sub;
-        this.exp = exp;
+    public void read(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n\nEnter details for new Teacher");
+        System.out.println("Enter subject:");
+        this.sub = sc.next();
+        System.out.println("Enter Exprience:");
+        this.exp = sc.nextInt();
     }
 
     public void display(){
@@ -51,8 +52,11 @@ class Regular extends Typist {
         super(code, name, speed, exp);
     }
     
-    public void read(int sal){
-        this.sal = sal;
+    public void read(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n\nEnter details for a Regular Typist");
+        System.out.println("Enter Salary");
+        this.sal = sc.nextInt();
     }
 
     public void display(){
@@ -69,8 +73,11 @@ class Casual extends Typist {
         super(code, name, speed, exp);
     }
     
-    public void read(int daily_wages){
-        this.daily_wages = daily_wages;
+    public void read(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n\nEnter details for a Casual Typist");
+        System.out.println("Enter Daily Wages");
+        this.daily_wages = sc.nextInt();
     }
 
     public void display(){
@@ -89,9 +96,13 @@ class Officer extends Staff {
     }
     
     
-    public void read( String dept, char grade){
-        this.dept = dept;
-        this.grade = grade;
+    public void read(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter details for a Officer:");
+        System.out.println("Enter Department:");
+        this.dept = sc.next();
+        System.out.println("Enter Grade:");
+        this.grade = sc.next().charAt(0);
     }
 
     public void display(){
@@ -107,19 +118,19 @@ public class Expriment7B {
         Staff staff = new Staff(1, "A");
 
         Teacher teacher = new Teacher(-1, "Teac");
-        teacher.read("Huh",  6);
+        teacher.read();
         teacher.display();
 
         Typist typeTypist = new Typist(2, "Type", 40, 12); 
         Regular regTypist = new Regular(3, "Regu", 66, 4);
-        regTypist.read(30000);
+        regTypist.read();
         Casual casTypist = new Casual(4, "Cas", 50, 3);
-        casTypist.read(1000);
+        casTypist.read();
         casTypist.display();
         regTypist.display();
 
         Officer off = new Officer(5, "Off");
-        off.read("IT", 'A');
+        off.read();
         off.display();
     }
 }

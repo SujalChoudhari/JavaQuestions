@@ -15,7 +15,6 @@ class Student {
     this.mathMarks = math;
     this.physicsMarks = physics;
     this.chemistryMarks = chem;
-
     this.total = math + physics + chem;
   }
 }
@@ -53,7 +52,7 @@ public class Expriment5E {
     }
 
     for (Student s : students) {
-      System.out.println(s.id + ":" + s.name + " -> " + s.total);
+      System.out.println(s.id + " : " + s.name + " -> " + s.total);
     }
   }
 }

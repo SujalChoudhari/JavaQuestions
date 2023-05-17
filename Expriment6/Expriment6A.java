@@ -1,5 +1,7 @@
 class TestClass {
+    public static int count;
     TestClass(){
+        count++;
         System.out.println("New Class Created");
     }
 }
@@ -8,9 +10,11 @@ class TestClass {
 public class Expriment6A {
     public static void main(String[] args) {
 
-        TestClass t = new TestClass();
-        TestClass t2 = new TestClass();
-        TestClass t4 = new TestClass();
-        TestClass t3 = new TestClass();
+        new TestClass();
+        new TestClass();
+        new TestClass();
+        new TestClass();
+        
+        System.out.println("The total count is, " + TestClass.count);
     }
 }

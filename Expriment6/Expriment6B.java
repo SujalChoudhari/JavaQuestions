@@ -1,34 +1,31 @@
 class Shape {
 
-  public int x;
-  public int y;
+  private int mLength;
+  private int mBreadth;
 
   Shape(){
-    this.x = 0;
-    this.y  = 0;
+    this.mLength = 0;
+    this.mBreadth  = 0;
   }
 
   Shape(Shape c) {
-    this.x = c.x;
-    this.y = c.y;
+    this.mLength = c.mLength;
+    this.mBreadth = c.mBreadth;
   }
 
   Shape(int size){
-    this.x = size;
-    this.y = size;
+    this.mLength = size;
+    this.mBreadth = size;
   }
 
   Shape(int l, int b){
-    this.x = l;
-    this.y = b;
+    this.mLength = l;
+    this.mBreadth = b;
   }
-
 
   public int getArea() {
-    return this.x * this.y;
+    return this.mLength * this.mBreadth;
   }
-
-
 }
 
 public class Expriment6B {
