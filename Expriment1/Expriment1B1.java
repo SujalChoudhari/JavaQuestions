@@ -1,4 +1,4 @@
-package Expriment1;
+
 import java.util.*;
 
 public class Expriment1B1 {

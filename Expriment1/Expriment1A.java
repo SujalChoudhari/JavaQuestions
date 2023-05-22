@@ -1,4 +1,4 @@
-package Expriment1;
+
 public class Expriment1A {
 
   public static void main(String[] args) {

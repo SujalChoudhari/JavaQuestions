@@ -1,4 +1,4 @@
-package Expriment1;
+
 import java.util.Scanner;
 
 public class Expriment1E1 {

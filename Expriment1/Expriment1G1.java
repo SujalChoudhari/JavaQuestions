@@ -1,4 +1,3 @@
-package Expriment1;
 public class Expriment1G1 {
 
   public static void main(String[] args) {
