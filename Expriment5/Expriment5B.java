@@ -20,7 +20,7 @@ public class Expriment5B {
         return side * side;
     }
 
-    private static int area(int length, int bredth){
-        return length * bredth;
+    private static int area(int length, int breadth){
+        return length * breadth;
     }
 }
