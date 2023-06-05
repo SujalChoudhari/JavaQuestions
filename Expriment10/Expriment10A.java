@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.SocketPermission;
 
 // Exception Handling
 
@@ -16,10 +15,8 @@ public class Expriment10A{
             BufferedReader br = new BufferedReader(fr);
             String potentialNumber = br.readLine();
         } catch (FileNotFoundException e) {
-            System.out.println("FILE DOES NOT EXIST");
             e.printStackTrace();
         } catch (IOException e){
-            System.out.println("CANNOT READ FILE");
             e.printStackTrace();
         } 
 

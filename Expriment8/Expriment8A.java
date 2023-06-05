@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 class Student {
     public int rollno;
 
@@ -26,22 +27,24 @@ class Test extends Student {
 
 }
 
+// Functional Interface
 interface Sports {
-    public int score();
+    public void score();
 }
 
 class Result extends Test implements Sports {
     public int total;
+    protected int score;
 
     public int total(){
-        this.total = this.sem1Marks + this.sem2Marks + score();  
+        this.total = this.sem1Marks + this.sem2Marks + score;  
         return this.total;
     }
 
-    public int score() {
+    public void score() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your sports score");
-        return sc.nextInt();
+        score =  sc.nextInt();
     }
 }
 
@@ -49,6 +52,7 @@ public class Expriment8A {
     public static void main(String[] args) {
         Result result  = new Result();
         result.read();
+        result.score();
         System.out.println( "Roll No:" + result.rollno + "\nScore: " + result.total());
 
     }

@@ -4,9 +4,16 @@ class Staff {
     public int code;
     public String name;
 
-    Staff(int code, String name){
-        this.code = code;
-        this.name = name;
+    public void read(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter code:");
+        this.code = sc.nextInt();
+        System.out.println("Enter name:");
+        this.name = sc.next();
+    }
+
+    public void display(){
+        System.out.println("Code: " +code + " Name: " + name);
     }
 }
 
@@ -14,11 +21,8 @@ class Teacher extends Staff {
     public String sub;
     public int exp;
 
-    Teacher(int code, String name){
-        super(code, name);
-    }
-    
     public void read(){
+        super.read();
         Scanner sc = new Scanner(System.in);
         System.out.println("\n\nEnter details for new Teacher");
         System.out.println("Enter subject:");
@@ -28,6 +32,7 @@ class Teacher extends Staff {
     }
 
     public void display(){
+        super.display();
         System.out.println("Subject: " +sub + " Exp: " + exp);
     }
 }
@@ -37,22 +42,31 @@ class Typist extends Staff {
     
     public int speed;
     public int exp;
-    
-    Typist(int code, String name, int speed, int exp){
-        super(code, name);
-        this.speed = speed;
-        this.exp = exp;
+
+    public void read(){
+        super.read();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n\nEnter details for a Typist");
+        System.out.println("Enter Speed");
+        this.speed = sc.nextInt();
+        System.out.println("Enter Exprience");
+        this.exp = sc.nextInt();
     }
+
+    public void display(){
+        super.display();
+        System.out.println("Speed: " +speed + " Exp: " + exp);
+    }
+
 }
 
 class Regular extends Typist {
     public int sal;
 
-    Regular(int code,String name, int speed, int exp){
-        super(code, name, speed, exp);
-    }
+
     
     public void read(){
+        super.read();
         Scanner sc = new Scanner(System.in);
         System.out.println("\n\nEnter details for a Regular Typist");
         System.out.println("Enter Salary");
@@ -60,6 +74,7 @@ class Regular extends Typist {
     }
 
     public void display(){
+        super.display();
         System.out.println("Sal: " + sal);
     }
 
@@ -69,11 +84,10 @@ class Regular extends Typist {
 class Casual extends Typist {
     public int daily_wages;
 
-    Casual(int code,String name, int speed, int exp){
-        super(code, name, speed, exp);
-    }
+
     
     public void read(){
+        super.read();
         Scanner sc = new Scanner(System.in);
         System.out.println("\n\nEnter details for a Casual Typist");
         System.out.println("Enter Daily Wages");
@@ -81,6 +95,7 @@ class Casual extends Typist {
     }
 
     public void display(){
+        super.display();
         System.out.println("Daily Wages: " + daily_wages);
     }
 
@@ -91,12 +106,10 @@ class Officer extends Staff {
     public String dept;
     public char grade;
 
-    Officer(int code, String name){
-        super(code, name);
-    }
-    
+
     
     public void read(){
+        super.read();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter details for a Officer:");
         System.out.println("Enter Department:");
@@ -106,6 +119,7 @@ class Officer extends Staff {
     }
 
     public void display(){
+        super.display();
         System.out.println("Dept: " +dept + " Grade: " + grade);
     }
 }
@@ -115,21 +129,27 @@ class Officer extends Staff {
 public class Expriment7B {
     public static void main(String[] args) {
         
-        Staff staff = new Staff(1, "A");
+        Staff staff = new Staff();
+        staff.read();
+        staff.display();
 
-        Teacher teacher = new Teacher(-1, "Teac");
+        Teacher teacher = new Teacher();
         teacher.read();
         teacher.display();
 
-        Typist typeTypist = new Typist(2, "Type", 40, 12); 
-        Regular regTypist = new Regular(3, "Regu", 66, 4);
+        Typist typeTypist = new Typist(); 
+        typeTypist.read();
+        typeTypist.display();
+        
+        Regular regTypist = new Regular();
         regTypist.read();
-        Casual casTypist = new Casual(4, "Cas", 50, 3);
+        regTypist.display();
+        
+        Casual casTypist = new Casual();
         casTypist.read();
         casTypist.display();
-        regTypist.display();
 
-        Officer off = new Officer(5, "Off");
+        Officer off = new Officer();
         off.read();
         off.display();
     }
