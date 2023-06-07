@@ -1,7 +1,6 @@
 package Expriment12;
 import java.awt.event.*;
 
-import javax.net.ssl.TrustManager;
 import javax.swing.*;
 
 
@@ -51,14 +50,10 @@ class GUI {
         displayText = new JLabel("");
         displayPanel.add(displayText);
 
-        
-        
         mainContainer.add(detailPanel);
         mainContainer.add(displayPanel);
 
-        
         main.add(mainContainer);
-
     }
 
     public void run(){
@@ -72,9 +67,7 @@ class GUI {
             name = usernameField.getText();
             pass = new String(passwardField.getPassword());
             displayText.setText(name+": "+pass);
-            
         }
-
     }
 
     class ResetButtonHandler implements ActionListener{
@@ -85,7 +78,6 @@ class GUI {
            passwardField.setText("");
             
         }
-
     }
 }
 
@@ -97,7 +89,4 @@ public class Expriment12A {
         gui.render();
         gui.run();
     }
-
-   
-  
 }
