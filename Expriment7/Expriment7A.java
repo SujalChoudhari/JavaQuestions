@@ -1,45 +1,33 @@
 class A {
 
-  public int x;
-  protected int y;
+  public int x = 20;
+  protected int y = 10;
 
-  A(int x, int y) {
-    this.x = x;
-    this.y = y;
-  }
 }
 
 class B extends A {
 
-  protected int w;
-  private int z;
+  protected int w = 3;
+  private int z = 4;
 
-  B(int x, int y, int z, int w) {
-    super(x, y);
-    this.z = z;
-    this.w = w;
-  }
 }
 
 class C extends B {
 
-  public int p;
-  public int q;
+  public int p = 5;
+  public int q= 5;
 
-  C(int x, int y, int z, int w, int p, int q) {
-    super(x, y, z, w);
-  }
 }
 
 public class Expriment7A {
 
   public static void main(String[] args) {
-    A a = new A(2, 5);
-    B b = new B(5, 9, 8, 6);
-    C c = new C(7, 9, 87, 6, 4, 3);
+    A a = new A();
+    B b = new B();
+    C c = new C();
 
-    // System.out.println(c.z); ERROR
-    // System.out.println(c.y); Works
-    // System.out.println(b.y); Works
+    //System.out.println(c.z); //ERROR
+    System.out.println(c.y); //Works
+    System.out.println(b.y); //Works
   }
 }

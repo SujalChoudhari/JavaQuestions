@@ -1,17 +1,13 @@
-class Death {
-    Death() {
-        System.out.println("Death object created");
-    }
-
+class Garbage {
     protected void finalize(){
-        System.out.println("Death Died");
+        System.out.println("object has been deleted");
     }
 }
 
 public class Expriment8D {
     public static void main(String[] args) {
-        Death d = new Death();
-        d = null;
+        Garbage garbage = new Garbage();
+        garbage = null;
         System.gc();
     }
 }

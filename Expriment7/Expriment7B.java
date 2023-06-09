@@ -6,7 +6,7 @@ class Staff {
 
     public void read(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter code:");
+        System.out.println("\n\n\nEnter code:");
         this.code = sc.nextInt();
         System.out.println("Enter name:");
         this.name = sc.next();
