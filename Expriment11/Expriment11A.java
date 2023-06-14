@@ -21,7 +21,6 @@ public class Expriment11A {
         Table t1 = new Table(5);
         Table t2 = new Table(7);
         Table t3 = new Table(13);
-
         t1.start();
         t2.start();
         t3.start();

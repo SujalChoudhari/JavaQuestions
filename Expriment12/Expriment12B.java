@@ -4,7 +4,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 class ButtonListener implements ActionListener {
-  private JTextField mCompleteDisplayText;
   private JTextField mDisplayTextField;
   private char mFunctor;
   private float mRight;
@@ -76,7 +75,6 @@ class ButtonListener implements ActionListener {
 
   private void resetCalculator() {
     mDisplayTextField.setText("");
-    mCompleteDisplayText.setText("");
     mLeft = 0;
     mRight = 0;
   }
@@ -89,7 +87,7 @@ class Calculator extends JFrame {
       "6", "5", "4", "-",
       "3", "2", "1", "*",
       "0", "C", ".", "/",
-      "=",
+              "=",
   };
 
   private JPanel mMainPanel;

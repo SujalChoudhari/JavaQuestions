@@ -5,68 +5,61 @@ import javax.swing.*;
 
 
 class GUI {
-    JFrame main;
-    JButton okButton;
-    JPanel mainContainer;
-    JPanel detailPanel;
-    JTextField usernameField;
-    JPasswordField passwordField;
-    JPanel displayPanel;
-    JLabel displayText;
+   private JFrame mMain;
+   private JPanel mMainContainer;
+   private JPanel mDetailPanel;
+   private JPanel mDisplayPanel;
+   private JTextField mUsernameField;
+   private JPasswordField mPasswordField;
+   private JLabel mDisplayText;
+   private JButton mOkButton;
 
-    String name;
-    String pass;
+    private String mName;
+    private String mPass;
 
     public void render(){
-        main = new JFrame("Login");
-        main.setSize(600, 100);
-        main.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainContainer =new JPanel();
-        mainContainer.setLayout(new BoxLayout(mainContainer, BoxLayout.Y_AXIS));
-        detailPanel = new JPanel();
-
-        JLabel loginLabel = new JLabel("Login:");
-        detailPanel.add(loginLabel);
-
-        usernameField = new JTextField(12);
-        detailPanel.add(usernameField);
-
-        JLabel passwardLabel = new JLabel("Password:");
-        detailPanel.add(passwardLabel);
-
-        passwordField = new JPasswordField(12);
-        detailPanel.add(passwordField);
-
-        okButton = new JButton("OK");
-        okButton.addActionListener(new OkButtonHandler());
-        detailPanel.add(okButton);
+        mMain = new JFrame("Login");
+        mMainContainer =new JPanel();
+        mDetailPanel = new JPanel();
+        mMain.setSize(600, 100);
+        mUsernameField = new JTextField(12);
+        mPasswordField = new JPasswordField(12);
+        mOkButton = new JButton("OK");
+        mDisplayPanel = new JPanel();
+        mDisplayText = new JLabel("");
         
+        JLabel passwardLabel = new JLabel("Password:");
+        JLabel loginLabel = new JLabel("Login:");
         JButton resetButton = new JButton("Reset");
+        
+        mOkButton.addActionListener(new OkButtonHandler());
         resetButton.addActionListener(new ResetButtonHandler());
-        detailPanel.add(resetButton);
-
-
-        displayPanel = new JPanel();
-        displayText = new JLabel("");
-        displayPanel.add(displayText);
-
-        mainContainer.add(detailPanel);
-        mainContainer.add(displayPanel);
-
-        main.add(mainContainer);
+        mMain.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mMainContainer.setLayout(new BoxLayout(mMainContainer, BoxLayout.Y_AXIS));
+        
+        mDetailPanel.add(loginLabel);
+        mDetailPanel.add(mUsernameField);
+        mDetailPanel.add(passwardLabel);
+        mDetailPanel.add(mPasswordField);
+        mDetailPanel.add(mOkButton);
+        mDetailPanel.add(resetButton);
+        mDisplayPanel.add(mDisplayText);
+        mMainContainer.add(mDetailPanel);
+        mMainContainer.add(mDisplayPanel);
+        mMain.add(mMainContainer);
     }
 
     public void run(){
-        main.setVisible(true);
+        mMain.setVisible(true);
     } 
 
     class OkButtonHandler implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            name = usernameField.getText();
-            pass = new String(passwordField.getPassword());
-            displayText.setText(name+": "+pass);
+            mName = mUsernameField.getText();
+            mPass = new String(mPasswordField.getPassword());
+            mDisplayText.setText(mName+": "+mPass);
         }
     }
 
@@ -74,8 +67,8 @@ class GUI {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-           usernameField.setText("");
-           passwordField.setText("");
+           mUsernameField.setText("");
+           mPasswordField.setText("");
             
         }
     }
