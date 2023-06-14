@@ -1,10 +1,5 @@
 import java.util.Scanner;
 
-/*
-a. Write an abstract class program to calculate area of circle, rectangle and triangle.
-*/
-
-
 abstract class Shape {
     protected int x;
     protected int y;

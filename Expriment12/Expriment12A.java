@@ -10,7 +10,7 @@ class GUI {
     JPanel mainContainer;
     JPanel detailPanel;
     JTextField usernameField;
-    JPasswordField passwardField;
+    JPasswordField passwordField;
     JPanel displayPanel;
     JLabel displayText;
 
@@ -34,8 +34,8 @@ class GUI {
         JLabel passwardLabel = new JLabel("Password:");
         detailPanel.add(passwardLabel);
 
-        passwardField = new JPasswordField(12);
-        detailPanel.add(passwardField);
+        passwordField = new JPasswordField(12);
+        detailPanel.add(passwordField);
 
         okButton = new JButton("OK");
         okButton.addActionListener(new OkButtonHandler());
@@ -65,7 +65,7 @@ class GUI {
         @Override
         public void actionPerformed(ActionEvent e) {
             name = usernameField.getText();
-            pass = new String(passwardField.getPassword());
+            pass = new String(passwordField.getPassword());
             displayText.setText(name+": "+pass);
         }
     }
@@ -75,7 +75,7 @@ class GUI {
         @Override
         public void actionPerformed(ActionEvent e) {
            usernameField.setText("");
-           passwardField.setText("");
+           passwordField.setText("");
             
         }
     }
