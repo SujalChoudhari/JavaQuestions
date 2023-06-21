@@ -11,11 +11,7 @@ class Account {
   }
 
   public void deposit(double amount) {
-    if (amount < 0) {
-      System.out.println("Amount cannot be negetive");
-    } else {
-      balance += amount;
-    }
+    balance += amount;
   }
 
   public void withdraw(double amount) {
@@ -43,7 +39,35 @@ class SavingsAccount extends Account {
   }
 }
 
+class CurrentAccount extends Account {
+
+  public double overdraftLimit;
+
+  CurrentAccount(double overdraftLimit) {
+    this.overdraftLimit = overdraftLimit;
+  }
+
+  public void checkOverdraft() {
+    if (balance < 0) {
+      System.out.println("You have exceeded your overdraft limit");
+    }
+  }
+}
+
 public class BankingSystem {
 
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    // Demonstrate inheritance using banking system
+    SavingsAccount savingsAccount = new SavingsAccount(0.05f);
+    savingsAccount.accountNumber = 123456789;
+    savingsAccount.balance = 1000;
+
+    CurrentAccount currentAccount = new CurrentAccount(1000);
+    currentAccount.accountNumber = 987654321;
+    currentAccount.balance = -30;
+
+    currentAccount.checkOverdraft();
+
+    savingsAccount.calculateInterest();
+  }
 }

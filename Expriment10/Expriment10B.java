@@ -1,21 +1,26 @@
 import java.util.*;
-class MarksOutOfBoundsException extends Exception  {}
 
-class DataEnterer{
+class MarksOutOfBoundsException extends Exception {
+    MarksOutOfBoundsException(String message) {
+        super(message);
+    }
+}
+
+class DataEnterer {
     public Vector<Integer> marks;
-    DataEnterer(){
-        marks = new Vector<Integer>(5); 
+
+    DataEnterer() {
+        marks = new Vector<Integer>(5);
     }
 
-    public void newEntry(int mark) throws MarksOutOfBoundsException{
-        if(mark > 100 || mark < 0){
-            throw new MarksOutOfBoundsException();
+    public void newEntry(int mark) throws MarksOutOfBoundsException {
+        if (mark > 100 || mark < 0) {
+            throw new MarksOutOfBoundsException("Marks (" + mark + ") is out of bounds");
         }
         marks.add(mark);
     }
 
 }
-
 
 public class Expriment10B {
     public static void main(String[] args) {
@@ -24,11 +29,11 @@ public class Expriment10B {
         int total = sc.nextInt();
 
         DataEnterer dataEnterer = new DataEnterer();
-        for(int i=0;i<total;i++){
+        for (int i = 0; i < total; i++) {
             System.out.println("New Entry:");
             try {
                 dataEnterer.newEntry(sc.nextInt());
-            } catch (MarksOutOfBoundsException e){
+            } catch (MarksOutOfBoundsException e) {
                 e.printStackTrace();
             }
         }
