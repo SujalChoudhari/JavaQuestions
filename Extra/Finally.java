@@ -6,7 +6,7 @@ public class Finally {
 		System.out.println("Running!");
 		try{
 			System.out.println("Computing...");
-			int c = a/b;
+			int k = a/b;
 			System.out.println("Computed!");
 			System.out.println("Fetching...");
 			int d = c[99];
