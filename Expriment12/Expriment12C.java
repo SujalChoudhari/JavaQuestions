@@ -3,6 +3,8 @@ package Expriment12;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class Form extends JFrame {
     private JPanel mMainPanel;
@@ -47,7 +49,7 @@ class Form extends JFrame {
         mPlaceLabel = new JLabel("Place:");
         mCountryComboBox = new JComboBox<String>();
         mDetailsLabel = new JLabel("Details:");
-        mDetailsTextArea = new JTextArea();
+        mDetailsTextArea = new JTextArea("");
 
         mSubmitButton = new JButton("Submit");
         mExitButton = new JButton("Exit");
@@ -56,7 +58,7 @@ class Form extends JFrame {
     public void init() {
         this.setSize(new Dimension(600, 500));
         this.add(mMainPanel);
-        mMainPanel.setLayout(new GridLayout(6, 2, 20, 5));
+        mMainPanel.setLayout(new GridLayout(6,2,30,5));
         mMainPanel.setBorder(new EmptyBorder(30, 70, 30, 70));
         mMainPanel.add(mNameLabel);
         mMainPanel.add(mNameTextField);
@@ -72,11 +74,45 @@ class Form extends JFrame {
         mInterestPanel.add(mSwimmingCheckBox);
         mMainPanel.add(mPlaceLabel);
         mMainPanel.add(mCountryComboBox);
+        mCountryComboBox.addItem("India");
+        mCountryComboBox.addItem("USA");
+        mCountryComboBox.addItem("UK");
+        mCountryComboBox.addItem("Canada");
+        mCountryComboBox.addItem("Bangladesh");
+        mCountryComboBox.addItem("Sri Lanka");
+        mCountryComboBox.addItem("Nepal");
         mMainPanel.add(mDetailsLabel);
         mMainPanel.add(mDetailsTextArea);
 
         mMainPanel.add(mSubmitButton);
         mMainPanel.add(mExitButton);
+
+        mSubmitButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String displayString = "";
+                displayString += "Name: " + mNameTextField.getText() + "\n";
+                displayString += "Gender: ";
+                if(mMaleRadioButton.isSelected()) 
+                    displayString += "Male\n";
+                else
+                    displayString += "Female\n";
+                
+                displayString += "Interest: ";
+                if(mMusiCheckBox.isSelected())
+                    displayString += "Music ";
+                if(mSwimmingCheckBox.isSelected())
+                    displayString += "Swimming";
+
+                displayString += "\nPlace: " + mCountryComboBox.getSelectedItem() + "\n";
+                
+                mDetailsTextArea.setText(displayString);
+
+            }
+            
+        });
     }
 
     void render() {
