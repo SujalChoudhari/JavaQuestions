@@ -101,7 +101,7 @@ class Calculator extends JFrame {
 
   Calculator() {
     super("Calculator");
-    this.setSize(350, 450);
+    this.setSize(350, 500);
     this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
   }
 
@@ -109,10 +109,11 @@ class Calculator extends JFrame {
     mMainPanel = new JPanel();
     mDisplayPanel = new JPanel();
     mButtonPanel = new JPanel();
-    mDisplayTextField = new JTextField(20);
+    mDisplayTextField = new JTextField(10);
+    mDisplayTextField.setFont(new Font("SansSerif",0,32));
     mButtons = new JButton[mSymbols.length];
     ButtonListener listner = new ButtonListener(mDisplayTextField);
-    mDisplayPanel.setMaximumSize(new Dimension(300, 50));
+    mDisplayPanel.setMaximumSize(new Dimension(350, 100));
     mDisplayTextField.setEditable(true);
     mDisplayPanel.add(mDisplayTextField);
 

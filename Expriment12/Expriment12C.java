@@ -34,7 +34,8 @@ class Form extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mMainPanel = new JPanel();
         mNameLabel = new JLabel("Name:");
-        mNameTextField = new JTextField("", 2);
+        mNameTextField = new JTextField("", 12);
+       
         mGenderLabel = new JLabel("Gender:");
         mGenderPanel = new JPanel();
 
@@ -47,9 +48,12 @@ class Form extends JFrame {
         mMusiCheckBox = new JCheckBox("Music");
         mSwimmingCheckBox = new JCheckBox("Swimming");
         mPlaceLabel = new JLabel("Place:");
+
+        
         mCountryComboBox = new JComboBox<String>();
         mDetailsLabel = new JLabel("Details:");
         mDetailsTextArea = new JTextArea("");
+        mDetailsTextArea.setMinimumSize(getPreferredSize());
 
         mSubmitButton = new JButton("Submit");
         mExitButton = new JButton("Exit");
@@ -61,7 +65,13 @@ class Form extends JFrame {
         mMainPanel.setLayout(new GridLayout(6,2,30,5));
         mMainPanel.setBorder(new EmptyBorder(30, 70, 30, 70));
         mMainPanel.add(mNameLabel);
-        mMainPanel.add(mNameTextField);
+       
+        JPanel nameHolder = new JPanel();
+        nameHolder.setPreferredSize(new Dimension(800,300));
+        mNameTextField.setMaximumSize(new Dimension(1000,100));
+        nameHolder.add(mNameTextField);
+        mMainPanel.add(nameHolder);
+
         mMainPanel.add(mGenderLabel);
         mMainPanel.add(mGenderPanel);
         mGenderPanel.add(mMaleRadioButton);
@@ -73,7 +83,10 @@ class Form extends JFrame {
         mInterestPanel.add(mMusiCheckBox);
         mInterestPanel.add(mSwimmingCheckBox);
         mMainPanel.add(mPlaceLabel);
-        mMainPanel.add(mCountryComboBox);
+
+        JPanel optionHolder = new JPanel();
+        optionHolder.add(mCountryComboBox);
+        mMainPanel.add(optionHolder);
         mCountryComboBox.addItem("India");
         mCountryComboBox.addItem("USA");
         mCountryComboBox.addItem("UK");
@@ -84,8 +97,14 @@ class Form extends JFrame {
         mMainPanel.add(mDetailsLabel);
         mMainPanel.add(mDetailsTextArea);
 
-        mMainPanel.add(mSubmitButton);
-        mMainPanel.add(mExitButton);
+        JPanel submitPanel = new JPanel();
+        
+        JPanel exitPanel = new JPanel();
+        submitPanel.add(mSubmitButton);
+        exitPanel.add(mExitButton);
+
+        mMainPanel.add(submitPanel);
+        mMainPanel.add(exitPanel);
 
         mSubmitButton.addActionListener(new ActionListener() {
 
@@ -116,7 +135,6 @@ class Form extends JFrame {
     }
 
     void render() {
-        this.pack();
         this.setVisible(true);
     }
 }
