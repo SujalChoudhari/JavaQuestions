@@ -43,7 +43,9 @@ public class Expriment5E {
 
     for (int i = 0; i < students.length; i++) {
       for (int j = 0; j < students.length - 1; j++) {
-        if (students[i].total > students[j].total) {
+        if (students[i].total < students[j].total) 
+          //edited as in question we have to sort it as descending order and it was ascending here
+        {
           Student temp = students[i];
           students[i] = students[j];
           students[j] = temp;
